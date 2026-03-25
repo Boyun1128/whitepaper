@@ -698,7 +698,7 @@
 <h3 id="41-mbb">4.1 物件框尺寸比較實驗：MBB 之準確度驗證</h3>
 <p>為驗證「精確的物件框尺寸對體重估算的影響」，我們進行了不同框選策略的比較實驗。下圖展示了 MobileNetV2-YOLOv3-Lite 模型分別針對 MBB（精準框）、MBB-（縮小框）與 MBB+（放大框）單豬數據集預測後的效能對比。</p>
 <p>本實驗採用交集比聯集 (Intersection over Union, IoU) 作為性能指標，用以衡量預測物件框與實際標註框之間的重疊程度。實驗數據明確指出：在隨機抽樣的 30 筆測試樣本中，僅有基於 MBB 訓練的模型能將 IoU 穩定收斂至接近 1.0 的極高水準；反之，只要框選面積偏移基準，預測準確度皆呈現高度不穩定的震盪。這從數據層面給出了實證：<strong>精準貼合的 MBB 是面積計算準確度的最佳測量基準</strong>。</p>
-<p><img alt="Comparison of IOU performance of MobileNetV2-YOLOv3-Lite model with MBB, MBB-, and MBB+ single-pig datasets" src="assets/mbb.png" /></p>
+<p><img alt="Comparison of IOU performance of MobileNetV2-YOLOv3-Lite model with MBB, MBB-, and MBB+ single-pig datasets" src="assets/MBB.png" /></p>
 <p><em>(圖 2：Comparison of IOU performance of MobileNetV2-YOLOv3-Lite model with MBB, MBB-, and MBB+ single-pig datasets.)</em></p>
 <h3 id="42-mobilenetv2-yolov3-lite-yolov11">4.2 MobileNetV2-YOLOv3-Lite 與 YOLOv11 之訓練結果比較與混淆矩陣分析</h3>
 <p>承接前述 1.1 節的硬體限制與 2.1 節的模型選型分析，本專案在邊緣平台上優先考量的是 可部署性、即時性與穩定運行能力。因此，我們選擇 MobileNetV2-YOLOv3-Lite 作為核心偵測模型，並進一步與 YOLOv11 進行比較，以驗證輕量化模型在本任務中的實際辨識能力。</p>
